@@ -29,8 +29,8 @@
 - [ ] **DASH-06**: 호기별 총합 범위 및 AC값 분포를 표시한다
 
 ### Data Layer (데이터)
-- [ ] **DATA-01**: new_res.json (800~1216회, 417건)을 로드하여 호기별로 필터링한다
-- [ ] **DATA-02**: 데이터 로드 시 유효성 검증을 수행한다 (번호 범위, 개수, 정렬)
+- [x] **DATA-01**: new_res.json (800~1216회, 417건)을 로드하여 호기별로 필터링한다
+- [x] **DATA-02**: 데이터 로드 시 유효성 검증을 수행한다 (번호 범위, 개수, 정렬)
 
 ### UI/UX
 - [ ] **UI-01**: 상단 영역은 깔끔 모던 스타일 (호기 선택 + 예측 결과 카드)
@@ -49,7 +49,7 @@
 - [ ] **HIST-07**: 예측 이력 목록을 볼 수 있다 (회차별 예측 → 결과 → 반성 타임라인)
 
 ### Infrastructure (인프라)
-- [ ] **INFRA-01**: Python FastAPI 백엔드가 localhost에서 실행된다
+- [x] **INFRA-01**: Python FastAPI 백엔드가 localhost에서 실행된다
 - [ ] **INFRA-02**: React(Vite) 프론트엔드가 localhost에서 실행된다
 - [ ] **INFRA-03**: 프론트엔드-백엔드 간 CORS가 올바르게 설정된다
 
@@ -77,11 +77,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1: Foundation & Data Layer | Pending |
+| INFRA-01 | Phase 1: Foundation & Data Layer | Complete |
 | INFRA-02 | Phase 1: Foundation & Data Layer | Pending |
 | INFRA-03 | Phase 1: Foundation & Data Layer | Pending |
-| DATA-01 | Phase 1: Foundation & Data Layer | Pending |
-| DATA-02 | Phase 1: Foundation & Data Layer | Pending |
+| DATA-01 | Phase 1: Foundation & Data Layer | Complete |
+| DATA-02 | Phase 1: Foundation & Data Layer | Complete |
 | DECAY-01 | Phase 2: Time Decay Engine | Pending |
 | DECAY-02 | Phase 2: Time Decay Engine | Pending |
 | PRED-01 | Phase 3: Prediction Pipeline (Vertical Slice) | Pending |

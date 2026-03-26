@@ -37,8 +37,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Backend scaffolding with uv, data loader, Pydantic validation, API endpoints, tests
-- [ ] 01-02-PLAN.md — Frontend scaffolding with Vite React TypeScript, Tailwind CSS v4, design tokens
+- [x] 01-01-PLAN.md — Backend scaffolding with uv, data loader, Pydantic validation, API endpoints, tests
+- [x] 01-02-PLAN.md — Frontend scaffolding with Vite React TypeScript, Tailwind CSS v4, design tokens
 - [ ] 01-03-PLAN.md — Wire frontend to backend health endpoint, verify CORS end-to-end
 
 ### Phase 2: Time Decay Engine
