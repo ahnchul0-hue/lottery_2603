@@ -1,0 +1,62 @@
+# Project State
+
+## Project Reference
+
+See: .planning/PROJECT.md (updated 2026-03-26)
+
+**Core value:** Machine-specific lottery analysis with time-decay weighting -- segmenting draws by physical machine (1호기/2호기/3호기) to surface per-machine statistical tendencies
+**Current focus:** Phase 1: Foundation & Data Layer
+
+## Current Position
+
+Phase: 1 of 9 (Foundation & Data Layer)
+Plan: 0 of 3 in current phase
+Status: Ready to plan
+Last activity: 2026-03-26 -- Roadmap created (9 phases, 35 requirements mapped)
+
+Progress: [░░░░░░░░░░] 0%
+
+## Performance Metrics
+
+**Velocity:**
+- Total plans completed: 0
+- Average duration: -
+- Total execution time: 0 hours
+
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| - | - | - | - |
+
+**Recent Trend:**
+- Last 5 plans: -
+- Trend: -
+
+*Updated after each plan completion*
+
+## Accumulated Context
+
+### Decisions
+
+Decisions are logged in PROJECT.md Key Decisions table.
+Recent decisions affecting current work:
+
+- [Roadmap]: 9 phases derived from 35 requirements with fine granularity. Backend-first build order (Foundation -> Decay -> Vertical Slice -> Full Engine -> UI -> Dashboard -> History -> Polish -> Hardening)
+- [Research]: Use pandas ewm() for time decay, Strategy Pattern ABC for prediction engines, Recharts for dashboard charts
+
+### Pending Todos
+
+None yet.
+
+### Blockers/Concerns
+
+- Statistical honesty: Chi-square test showed no significant machine differences. Must frame as "analysis tool" not "prediction engine"
+- Time decay halflife=50 is a default; needs validation via backtesting during Phase 2-3
+- Composite strategy weights (30/25/20/25) are arbitrary; needs empirical evaluation during Phase 4
+
+## Session Continuity
+
+Last session: 2026-03-26
+Stopped at: Roadmap creation complete. Ready to plan Phase 1.
+Resume file: None

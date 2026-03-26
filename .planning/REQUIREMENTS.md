@@ -75,7 +75,43 @@
 
 ## Traceability
 
-(Filled by roadmap — maps REQ-IDs to phases)
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| INFRA-01 | Phase 1: Foundation & Data Layer | Pending |
+| INFRA-02 | Phase 1: Foundation & Data Layer | Pending |
+| INFRA-03 | Phase 1: Foundation & Data Layer | Pending |
+| DATA-01 | Phase 1: Foundation & Data Layer | Pending |
+| DATA-02 | Phase 1: Foundation & Data Layer | Pending |
+| DECAY-01 | Phase 2: Time Decay Engine | Pending |
+| DECAY-02 | Phase 2: Time Decay Engine | Pending |
+| PRED-01 | Phase 3: Prediction Pipeline (Vertical Slice) | Pending |
+| PRED-06 | Phase 3: Prediction Pipeline (Vertical Slice) | Pending |
+| PRED-02 | Phase 4: Full Prediction Engine | Pending |
+| PRED-03 | Phase 4: Full Prediction Engine | Pending |
+| PRED-04 | Phase 4: Full Prediction Engine | Pending |
+| PRED-05 | Phase 4: Full Prediction Engine | Pending |
+| PRED-07 | Phase 4: Full Prediction Engine | Pending |
+| MACH-01 | Phase 5: Machine Selection & Prediction UI | Pending |
+| MACH-02 | Phase 5: Machine Selection & Prediction UI | Pending |
+| MACH-03 | Phase 5: Machine Selection & Prediction UI | Pending |
+| UI-01 | Phase 5: Machine Selection & Prediction UI | Pending |
+| DASH-01 | Phase 6: Statistics Dashboard | Pending |
+| DASH-02 | Phase 6: Statistics Dashboard | Pending |
+| DASH-03 | Phase 6: Statistics Dashboard | Pending |
+| DASH-04 | Phase 6: Statistics Dashboard | Pending |
+| DASH-05 | Phase 6: Statistics Dashboard | Pending |
+| DASH-06 | Phase 6: Statistics Dashboard | Pending |
+| UI-02 | Phase 6: Statistics Dashboard | Pending |
+| HIST-01 | Phase 7: Prediction History & Review | Pending |
+| HIST-02 | Phase 7: Prediction History & Review | Pending |
+| HIST-03 | Phase 7: Prediction History & Review | Pending |
+| HIST-04 | Phase 7: Prediction History & Review | Pending |
+| HIST-05 | Phase 7: Prediction History & Review | Pending |
+| HIST-06 | Phase 7: Prediction History & Review | Pending |
+| HIST-07 | Phase 7: Prediction History & Review | Pending |
+| UI-03 | Phase 8: UI/UX Polish | Pending |
+| UI-04 | Phase 8: UI/UX Polish | Pending |
+| UI-05 | Phase 8: UI/UX Polish | Pending |
 
 ---
-*Last updated: 2026-03-26 after requirements definition*
+*Last updated: 2026-03-26 after roadmap creation*
