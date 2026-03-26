@@ -50,7 +50,7 @@
 
 ### Infrastructure (인프라)
 - [x] **INFRA-01**: Python FastAPI 백엔드가 localhost에서 실행된다
-- [ ] **INFRA-02**: React(Vite) 프론트엔드가 localhost에서 실행된다
+- [x] **INFRA-02**: React(Vite) 프론트엔드가 localhost에서 실행된다
 - [ ] **INFRA-03**: 프론트엔드-백엔드 간 CORS가 올바르게 설정된다
 
 ## v2 Requirements (Deferred)
@@ -78,7 +78,7 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INFRA-01 | Phase 1: Foundation & Data Layer | Complete |
-| INFRA-02 | Phase 1: Foundation & Data Layer | Pending |
+| INFRA-02 | Phase 1: Foundation & Data Layer | Complete |
 | INFRA-03 | Phase 1: Foundation & Data Layer | Pending |
 | DATA-01 | Phase 1: Foundation & Data Layer | Complete |
 | DATA-02 | Phase 1: Foundation & Data Layer | Complete |
