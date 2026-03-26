@@ -52,7 +52,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD: DecayEngine class with exponential decay weighting, 8 test cases, config parameterization
+- [x] 02-01-PLAN.md — TDD: DecayEngine class with exponential decay weighting, 8 test cases, config parameterization
 
 ### Phase 3: Prediction Pipeline (Vertical Slice)
 **Goal**: One complete prediction strategy (Frequency) works end-to-end: API request with machine number returns 5 valid game sets

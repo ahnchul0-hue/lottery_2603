@@ -17,8 +17,8 @@
 - [ ] **PRED-07**: 25게임 간 최소 다양성 보장 (동일 번호 세트 없음)
 
 ### Time Decay (시간 감쇠)
-- [ ] **DECAY-01**: 지수 감쇠 가중치를 적용한다 (최신 회차 = 높은 가중치, 과거 회차 = 낮은 가중치)
-- [ ] **DECAY-02**: 감쇠 파라미터(halflife)는 기본값 50으로 설정되며 코드 레벨에서 조정 가능하다
+- [x] **DECAY-01**: 지수 감쇠 가중치를 적용한다 (최신 회차 = 높은 가중치, 과거 회차 = 낮은 가중치)
+- [x] **DECAY-02**: 감쇠 파라미터(halflife)는 기본값 50으로 설정되며 코드 레벨에서 조정 가능하다
 
 ### Analysis Dashboard (분석 대시보드)
 - [ ] **DASH-01**: 호기별 번호 출현 빈도 바 차트를 표시한다 (1-45번 전체)
@@ -82,8 +82,8 @@
 | INFRA-03 | Phase 1: Foundation & Data Layer | Complete |
 | DATA-01 | Phase 1: Foundation & Data Layer | Complete |
 | DATA-02 | Phase 1: Foundation & Data Layer | Complete |
-| DECAY-01 | Phase 2: Time Decay Engine | Pending |
-| DECAY-02 | Phase 2: Time Decay Engine | Pending |
+| DECAY-01 | Phase 2: Time Decay Engine | Complete |
+| DECAY-02 | Phase 2: Time Decay Engine | Complete |
 | PRED-01 | Phase 3: Prediction Pipeline (Vertical Slice) | Pending |
 | PRED-06 | Phase 3: Prediction Pipeline (Vertical Slice) | Pending |
 | PRED-02 | Phase 4: Full Prediction Engine | Pending |

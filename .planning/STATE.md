@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to plan
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-26T14:09:39.375Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-26T14:26:18.886Z"
 progress:
   total_phases: 9
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  completed_phases: 2
+  total_plans: 4
+  completed_plans: 4
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-26)
 
 **Core value:** Machine-specific lottery analysis with time-decay weighting -- segmenting draws by physical machine (1호기/2호기/3호기) to surface per-machine statistical tendencies
-**Current focus:** Phase 01 — foundation-data-layer
+**Current focus:** Phase 02 — time-decay-engine
 
 ## Current Position
 
-Phase: 2
-Plan: Not started
+Phase: 02 (time-decay-engine) — EXECUTING
+Plan: 1 of 1
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Plan: Not started
 | Phase 01 P01 | 5min | 2 tasks | 17 files |
 | Phase 01 P02 | 5min | 2 tasks | 3 files |
 | Phase 01 P03 | 5min | 2 tasks | 1 files |
+| Phase 02 P01 | 2min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,8 @@ Recent decisions affecting current work:
 - [Phase 01]: Pre-filter lottery data by machine at startup into dict for O(1) lookups
 - [Phase 01]: Used Tailwind v4 @theme directive for design tokens -- generates native utility classes without config file
 - [Phase 01]: Used native fetch instead of axios for health check -- TanStack Query will wrap fetch in later phases
+- [Phase 02]: Pure Python exponentiation for decay weights -- numpy not needed for 417 records
+- [Phase 02]: DECAY_HALFLIFE=30 in config.py Settings, overridable via DecayEngine constructor
 
 ### Pending Todos
 
@@ -77,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-26T14:09:39.372Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-time-decay-engine/02-CONTEXT.md
+Last session: 2026-03-26T14:26:18.883Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
