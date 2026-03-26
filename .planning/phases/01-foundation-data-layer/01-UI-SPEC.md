@@ -54,7 +54,7 @@ Exceptions: none
 | Role | Size | Weight | Line Height | Tailwind Class |
 |------|------|--------|-------------|----------------|
 | Body | 16px | 400 (regular) | 1.5 | `text-base font-normal leading-relaxed` |
-| Label | 14px | 500 (medium) | 1.4 | `text-sm font-medium leading-snug` |
+| Label | 14px | 400 (regular) | 1.4 | `text-sm font-normal leading-snug` |
 | Heading | 24px | 700 (bold) | 1.2 | `text-2xl font-bold leading-tight` |
 
 **Phase 1 usage:** Only Body and Heading are used in the placeholder page. Label is declared here for Phase 5+ consistency.
