@@ -39,7 +39,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md — Backend scaffolding with uv, data loader, Pydantic validation, API endpoints, tests
 - [x] 01-02-PLAN.md — Frontend scaffolding with Vite React TypeScript, Tailwind CSS v4, design tokens
-- [ ] 01-03-PLAN.md — Wire frontend to backend health endpoint, verify CORS end-to-end
+- [x] 01-03-PLAN.md — Wire frontend to backend health endpoint, verify CORS end-to-end
 
 ### Phase 2: Time Decay Engine
 **Goal**: A reusable time-decay weighting module that assigns exponentially decaying weights to historical draws
