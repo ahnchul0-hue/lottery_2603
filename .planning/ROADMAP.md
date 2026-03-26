@@ -34,12 +34,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Frontend can make a cross-origin request to backend without CORS errors
   4. Backend loads new_res.json at startup and returns data filtered by machine number (1/2/3) via API
   5. Invalid data entries (wrong number range, wrong count, unsorted) are rejected during load with clear error messages
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Backend scaffolding with uv, data loader, Pydantic validation, API endpoints, tests
+- [ ] 01-02-PLAN.md — Frontend scaffolding with Vite React TypeScript, Tailwind CSS v4, design tokens
+- [ ] 01-03-PLAN.md — Wire frontend to backend health endpoint, verify CORS end-to-end
 
 ### Phase 2: Time Decay Engine
 **Goal**: A reusable time-decay weighting module that assigns exponentially decaying weights to historical draws
@@ -175,7 +175,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Layer | 0/3 | Not started | - |
+| 1. Foundation & Data Layer | 0/3 | Planned | - |
 | 2. Time Decay Engine | 0/1 | Not started | - |
 | 3. Prediction Pipeline (Vertical Slice) | 0/2 | Not started | - |
 | 4. Full Prediction Engine | 0/3 | Not started | - |
