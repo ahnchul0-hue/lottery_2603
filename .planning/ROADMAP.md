@@ -47,12 +47,12 @@ Plans:
 **Requirements**: DECAY-01, DECAY-02
 **Success Criteria** (what must be TRUE):
   1. Given a list of draws, the decay engine returns per-draw weights where the most recent draw has the highest weight
-  2. The halflife parameter defaults to 50 and can be changed at the code level without modifying core logic
+  2. The halflife parameter defaults to 30 and can be changed at the code level without modifying core logic
   3. Weight values follow an exponential decay curve (verifiable by plotting or spot-checking ratios between consecutive draws)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — TDD: DecayEngine class with exponential decay weighting, 8 test cases, config parameterization
 
 ### Phase 3: Prediction Pipeline (Vertical Slice)
 **Goal**: One complete prediction strategy (Frequency) works end-to-end: API request with machine number returns 5 valid game sets
@@ -175,8 +175,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Layer | 0/3 | Planned | - |
-| 2. Time Decay Engine | 0/1 | Not started | - |
+| 1. Foundation & Data Layer | 3/3 | Complete | 2026-03-26 |
+| 2. Time Decay Engine | 0/1 | Planned | - |
 | 3. Prediction Pipeline (Vertical Slice) | 0/2 | Not started | - |
 | 4. Full Prediction Engine | 0/3 | Not started | - |
 | 5. Machine Selection & Prediction UI | 0/3 | Not started | - |
