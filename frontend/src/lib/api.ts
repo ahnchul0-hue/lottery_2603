@@ -37,3 +37,24 @@ export async function fetchHeatmapData(): Promise<HeatmapData> {
   }
   return res.json() as Promise<HeatmapData>;
 }
+
+export async function fetchReflection(req: {
+  machine: string;
+  roundNumber: number;
+  comparisonData: object;
+  pastReflections?: string[];
+}): Promise<string> {
+  const res = await fetch(`${API_BASE}/reflect`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      machine: req.machine,
+      round_number: req.roundNumber,
+      comparison_data: req.comparisonData,
+      past_reflections: req.pastReflections,
+    }),
+  });
+  if (!res.ok) throw new Error(`Reflection failed: HTTP ${res.status}`);
+  const data = (await res.json()) as { reflection: string };
+  return data.reflection;
+}
