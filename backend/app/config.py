@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 
@@ -7,6 +8,8 @@ class Settings:
     HOST: str = "0.0.0.0"
     PORT: int = 8000
     DECAY_HALFLIFE: int = 30
+    ANTHROPIC_API_KEY: str | None = os.environ.get("ANTHROPIC_API_KEY")
+    REFLECTION_MODEL: str = "claude-haiku-4-5"
 
 
 settings = Settings()
