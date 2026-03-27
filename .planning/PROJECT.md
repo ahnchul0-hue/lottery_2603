@@ -43,9 +43,10 @@
 - [x] 전략당 5게임 생성 (총 25게임) — Validated in Phase 4
 - [x] 예측 결과 표시 UI — Validated in Phase 5
 
+- [x] 호기별 통계 분석 대시보드 — Validated in Phase 6
+
 ### Active
 
-- [ ] 호기별 통계 분석 대시보드
 - [ ] 방법론 리서치 후 사전 제안/확인 프로세스
 
 ### Out of Scope
@@ -109,4 +110,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-27 after Phase 5 completion — machine selection & prediction UI delivered*
+*Last updated: 2026-03-27 after Phase 6 completion — statistics dashboard with 6 chart sections delivered*
