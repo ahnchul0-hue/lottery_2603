@@ -1,57 +1,47 @@
-import { useEffect, useState } from 'react'
-
-const API_BASE = 'http://localhost:8000/api'
+import { useState } from 'react'
+import { MachineSelector } from './components/MachineSelector'
+import { PredictionResults } from './components/PredictionResults'
+import { usePrediction } from './hooks/usePrediction'
 
 function App() {
-  const [health, setHealth] = useState<{
-    status: string
-    data_loaded: boolean
-    total_records: number
-  } | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [selectedMachine, setSelectedMachine] = useState<string | null>(null)
+  const prediction = usePrediction()
 
-  useEffect(() => {
-    fetch(`${API_BASE}/health`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json()
-      })
-      .then(setHealth)
-      .catch((err) => setError(err.message))
-  }, [])
+  const handlePredict = () => {
+    if (selectedMachine) {
+      prediction.mutate(selectedMachine)
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-surface flex items-center justify-center">
-      <div className="max-w-[400px] w-full mx-4 bg-card p-8 rounded-xl shadow-md border border-border">
-        <h1 className="text-2xl font-bold leading-tight text-text-primary mb-6">
-          Lottery Predictor
+    <div className="min-h-screen bg-surface">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <h1 className="text-2xl font-bold text-text-primary mb-6">
+          로또 예측기
         </h1>
-        <div className="space-y-3 text-left">
-          {health === null && error === null && (
-            <p className="text-text-secondary">Connecting to backend...</p>
-          )}
-          {health !== null && (
-            <>
-              <p className="text-text-primary">
-                <span className="inline-block w-2 h-2 rounded-full bg-success mr-2"></span>
-                Status: Connected
-              </p>
-              <p className="text-text-primary">
-                Data loaded: {health.total_records} records
-              </p>
-            </>
-          )}
-          {error !== null && (
-            <>
-              <p className="text-destructive font-bold">
-                Backend Connection Failed
-              </p>
-              <p className="text-text-secondary">
-                Could not reach the backend server. Make sure FastAPI is running on port 8000.
-              </p>
-            </>
-          )}
+
+        <MachineSelector
+          selectedMachine={selectedMachine}
+          onSelectMachine={setSelectedMachine}
+        />
+
+        <div className="my-6 text-center">
+          <button
+            onClick={handlePredict}
+            disabled={!selectedMachine || prediction.isPending}
+            className="px-8 py-3 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {prediction.isPending ? '예측 중...' : '번호 예측'}
+          </button>
         </div>
+
+        {prediction.isError && (
+          <p className="text-destructive text-center mb-4">
+            예측 실패: 백엔드 서버를 확인하세요.
+          </p>
+        )}
+
+        {prediction.data && <PredictionResults results={prediction.data} />}
       </div>
     </div>
   )
