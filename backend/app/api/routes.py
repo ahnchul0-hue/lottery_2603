@@ -7,6 +7,8 @@ from app.schemas.lottery import (
     PredictRequest,
     PredictResponse,
 )
+from app.schemas.statistics import HeatmapResponse
+from app.services.statistics_service import compute_heatmap_data
 from app.strategies import get_strategy
 
 router = APIRouter()
@@ -82,3 +84,19 @@ def predict_numbers(request: PredictRequest):
         strategy=request.strategy,
         machine=request.machine,
     )
+
+
+@router.get("/statistics/heatmap", response_model=HeatmapResponse)
+def get_heatmap_data():
+    """Return per-machine per-number frequency deviation from expected.
+
+    Uses sync def -- CPU-bound computation, consistent with existing pattern.
+    Per D-05: Heatmap 3x45 deviation data from backend endpoint.
+    Per D-11: Deviation = (actual - expected) / expected.
+    """
+    loader = data_store.get("loader")
+    if loader is None:
+        raise HTTPException(status_code=503, detail="Data not loaded")
+
+    rows = compute_heatmap_data(loader._by_machine)
+    return HeatmapResponse(rows=rows)
