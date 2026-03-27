@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import { MachineSelector } from './components/MachineSelector'
 import { PredictionResults } from './components/PredictionResults'
+import { ThemeToggle } from './components/ThemeToggle'
 import { StatisticsDashboard } from './components/dashboard/StatisticsDashboard'
 import { SavePredictionButton } from './components/history/SavePredictionButton'
 import { HistorySection } from './components/history/HistorySection'
 import { usePrediction } from './hooks/usePrediction'
 import { useHistoryStorage } from './hooks/useHistoryStorage'
+import { useTheme } from './hooks/useTheme'
 import type { SavedPrediction } from './types/history'
 
 function App() {
   const [selectedMachine, setSelectedMachine] = useState<string | null>(null)
   const prediction = usePrediction()
   const { entries, addEntry, updateEntry } = useHistoryStorage()
+  const { theme, toggle } = useTheme()
 
   const handlePredict = () => {
     if (selectedMachine) {
@@ -37,9 +40,12 @@ function App() {
   return (
     <div className="min-h-screen bg-surface">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold text-text-primary mb-6">
-          로또 예측기
-        </h1>
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold text-text-primary">
+            로또 예측기
+          </h1>
+          <ThemeToggle theme={theme} onToggle={toggle} />
+        </div>
 
         <MachineSelector
           selectedMachine={selectedMachine}
