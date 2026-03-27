@@ -12,9 +12,9 @@
 - [x] **PRED-02**: 패턴 전략 — 호기별 최빈 쌍, 연속번호, 끝수 패턴을 분석하여 5게임 생성
 - [x] **PRED-03**: 구간 전략 — 호기별 번호 구간대(1-9/10-19/20-29/30-39/40-45) 분포를 반영하여 5게임 생성
 - [x] **PRED-04**: 밸런스 전략 — 호기별 홀짝/고저 비율 경향을 반영하여 5게임 생성
-- [ ] **PRED-05**: 종합 전략 — 위 4가지 전략을 가중 평균하여 5게임 생성
+- [x] **PRED-05**: 종합 전략 — 위 4가지 전략을 가중 평균하여 5게임 생성
 - [x] **PRED-06**: 각 전략에서 생성되는 6개 번호가 1-45 범위 내 중복 없이 오름차순 정렬된다
-- [ ] **PRED-07**: 25게임 간 최소 다양성 보장 (동일 번호 세트 없음)
+- [x] **PRED-07**: 25게임 간 최소 다양성 보장 (동일 번호 세트 없음)
 
 ### Time Decay (시간 감쇠)
 - [x] **DECAY-01**: 지수 감쇠 가중치를 적용한다 (최신 회차 = 높은 가중치, 과거 회차 = 낮은 가중치)
@@ -89,8 +89,8 @@
 | PRED-02 | Phase 4: Full Prediction Engine | Complete |
 | PRED-03 | Phase 4: Full Prediction Engine | Complete |
 | PRED-04 | Phase 4: Full Prediction Engine | Complete |
-| PRED-05 | Phase 4: Full Prediction Engine | Pending |
-| PRED-07 | Phase 4: Full Prediction Engine | Pending |
+| PRED-05 | Phase 4: Full Prediction Engine | Complete |
+| PRED-07 | Phase 4: Full Prediction Engine | Complete |
 | MACH-01 | Phase 5: Machine Selection & Prediction UI | Pending |
 | MACH-02 | Phase 5: Machine Selection & Prediction UI | Pending |
 | MACH-03 | Phase 5: Machine Selection & Prediction UI | Pending |
