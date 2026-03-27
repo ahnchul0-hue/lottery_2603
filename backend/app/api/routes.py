@@ -7,7 +7,9 @@ from app.schemas.lottery import (
     PredictRequest,
     PredictResponse,
 )
+from app.schemas.reflection import ReflectRequest, ReflectResponse
 from app.schemas.statistics import HeatmapResponse
+from app.services.reflection_service import generate_reflection
 from app.services.statistics_service import compute_heatmap_data
 from app.strategies import get_strategy
 
@@ -100,3 +102,36 @@ def get_heatmap_data():
 
     rows = compute_heatmap_data(loader._by_machine)
     return HeatmapResponse(rows=rows)
+
+
+@router.post("/reflect", response_model=ReflectResponse)
+def create_reflection(request: ReflectRequest):
+    """Generate AI reflection memo from prediction comparison results.
+
+    Uses sync def -- Claude API call is IO-bound, consistent with existing endpoint pattern.
+    Per D-11: AI auto-generates reflection, not user-written.
+    Per D-12: Analysis includes overestimated numbers, missed patterns, strategy performance, adjustment suggestions.
+    Per D-14: Only same-machine reflections are fed back (frontend filters before sending).
+    Per D-15: Returns 503 if ANTHROPIC_API_KEY is not configured (graceful degradation).
+    """
+    try:
+        reflection = generate_reflection(
+            machine=request.machine,
+            round_number=request.round_number,
+            comparison_data=request.comparison_data,
+            past_reflections=request.past_reflections,
+        )
+    except ValueError as e:
+        # API key not configured -- graceful degradation per D-15
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        # Claude API errors (auth, rate limit, network)
+        raise HTTPException(
+            status_code=502,
+            detail=f"AI reflection generation failed: {str(e)}",
+        )
+
+    return ReflectResponse(
+        reflection=reflection,
+        model="claude-haiku-4-5",
+    )
