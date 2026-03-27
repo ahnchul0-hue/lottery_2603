@@ -18,11 +18,13 @@ export async function fetchMachineData(
 export async function fetchPrediction(
   machine: string,
   strategy: string,
+  signal?: AbortSignal,
 ): Promise<PredictResponse> {
   const res = await fetch(`${API_BASE}/predict`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ machine, strategy }),
+    signal,
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch prediction: HTTP ${res.status}`);
