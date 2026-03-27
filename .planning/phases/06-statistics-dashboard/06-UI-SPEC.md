@@ -33,7 +33,7 @@ Declared values (multiples of 4, matching existing 8-point system from Phase 1):
 
 | Token | Value | Usage in This Phase |
 |-------|-------|---------------------|
-| xs | 4px | Gap between heatmap cells, inline padding within compact elements |
+| xs | 4px | Inline padding within compact elements |
 | sm | 8px | Gap between lotto balls in Hot/Cold row, inner padding of heatmap row labels |
 | md | 16px | Padding inside ChartCard (p-4), gap between chart title and chart body (mb-3 ~12px rounded to mb-4) |
 | lg | 24px | Gap between consecutive ChartCard sections (space-y-6) |
@@ -50,14 +50,14 @@ Exceptions: Heatmap cell width is ~19-20px (896px max-w-4xl / 46 columns includi
 | Role | Size | Weight | Line Height | Usage in This Phase |
 |------|------|--------|-------------|---------------------|
 | Body | 14px (text-sm) | 400 (normal) | 1.5 | Chart axis labels, tooltip text, heatmap hover text, ratio labels |
-| Label | 16px (text-base) | 600 (semibold) | 1.5 | ChartCard titles (h3), Hot/Cold section sub-labels |
+| Label | 16px (text-base) | 700 (bold) | 1.5 | ChartCard titles (h3), Hot/Cold section sub-labels |
 | Heading | 20px (text-xl) | 700 (bold) | 1.2 | "통계 분석" section header (h2) |
 | Display | 28px (text-2xl) | 700 (bold) | 1.2 | Not used in this phase (page title is in App.tsx, already exists) |
 
-Font weights used: 400 (normal) and 700 (bold), with 600 (semibold) for card titles.
-This matches the existing pattern: App.tsx uses `font-bold` for h1, StrategySection uses `font-semibold` for h3.
+Font weights used: 400 (normal) and 700 (bold). Two weights only.
+All emphasis text (card titles, section headers, sub-labels) uses `font-bold` (700). Body and secondary text uses `font-normal` (400).
 
-Source: Existing components (App.tsx text-2xl font-bold, StrategySection text-lg font-semibold, MachineCard text-sm text-text-secondary).
+Source: Existing components (App.tsx text-2xl font-bold, StrategySection uses font-semibold but this phase standardizes to font-bold for all emphasis).
 
 ---
 
@@ -92,6 +92,12 @@ Source: Existing components (App.tsx text-2xl font-bold, StrategySection text-lg
 Normalization: deviation values clamped to [-1, +1] range. Values are `(actual - expected) / expected` from the backend.
 
 Source: CONTEXT.md D-09 (red-blue diverging scheme), RESEARCH.md Pattern 3.
+
+---
+
+## Visual Focal Point
+
+Primary focal point: the FrequencyBarChart (DASH-01) at 300px height is the first and largest visual element, anchoring the dashboard below the section header.
 
 ---
 
@@ -192,7 +198,7 @@ None in this phase. The dashboard is read-only (D-08).
 Every chart is wrapped in `ChartCard`:
 ```
 bg-card rounded-xl border border-border p-4
-  h3: text-base font-semibold text-text-primary mb-3
+  h3: text-base font-bold text-text-primary mb-4
   [chart content]
 ```
 Gap between cards: `space-y-6` (24px)
@@ -213,7 +219,7 @@ Gap between cards: `space-y-6` (24px)
 - First column: machine label (3호기, etc.), width ~48px
 - Cell columns: 45 equal-width cells (~18-19px each)
 - Cell height: 24px
-- Cell gap: 1px (to show grid lines)
+- Cell gap: `gap: 0` -- no gap between cells. Each cell uses `border: 1px solid var(--color-border)` to create visible grid lines between cells without introducing a non-standard spacing value.
 - Overflow: `overflow-x-auto` as safety valve
 - Header row: numbers 1-45, `text-[10px] text-text-secondary text-center`
 - Selected machine row: `outline outline-2 outline-accent` to highlight current selection
