@@ -3,9 +3,9 @@
 ## v1 Requirements
 
 ### Machine Selection (호기 선택)
-- [ ] **MACH-01**: 사용자가 1호기/2호기/3호기 중 하나를 선택할 수 있다
-- [ ] **MACH-02**: 선택된 호기에 따라 모든 분석과 예측이 해당 호기 데이터만 사용한다
-- [ ] **MACH-03**: 호기 선택 시 해당 호기의 총 추첨 횟수와 최근 추첨일이 표시된다
+- [x] **MACH-01**: 사용자가 1호기/2호기/3호기 중 하나를 선택할 수 있다
+- [x] **MACH-02**: 선택된 호기에 따라 모든 분석과 예측이 해당 호기 데이터만 사용한다
+- [x] **MACH-03**: 호기 선택 시 해당 호기의 총 추첨 횟수와 최근 추첨일이 표시된다
 
 ### Prediction Engine (예측 엔진)
 - [x] **PRED-01**: 빈도 전략 — 호기별 번호 출현 빈도에 시간 감쇠 가중치를 적용하여 5게임 생성
@@ -33,7 +33,7 @@
 - [x] **DATA-02**: 데이터 로드 시 유효성 검증을 수행한다 (번호 범위, 개수, 정렬)
 
 ### UI/UX
-- [ ] **UI-01**: 상단 영역은 깔끔 모던 스타일 (호기 선택 + 예측 결과 카드)
+- [x] **UI-01**: 상단 영역은 깔끔 모던 스타일 (호기 선택 + 예측 결과 카드)
 - [ ] **UI-02**: 하단 영역은 데이터 분석 대시보드 스타일 (차트, 통계)
 - [ ] **UI-03**: 다크/라이트 모드를 지원한다
 - [ ] **UI-04**: 예측 진행 중 로딩 애니메이션을 표시한다
@@ -91,10 +91,10 @@
 | PRED-04 | Phase 4: Full Prediction Engine | Complete |
 | PRED-05 | Phase 4: Full Prediction Engine | Complete |
 | PRED-07 | Phase 4: Full Prediction Engine | Complete |
-| MACH-01 | Phase 5: Machine Selection & Prediction UI | Pending |
-| MACH-02 | Phase 5: Machine Selection & Prediction UI | Pending |
-| MACH-03 | Phase 5: Machine Selection & Prediction UI | Pending |
-| UI-01 | Phase 5: Machine Selection & Prediction UI | Pending |
+| MACH-01 | Phase 5: Machine Selection & Prediction UI | Complete |
+| MACH-02 | Phase 5: Machine Selection & Prediction UI | Complete |
+| MACH-03 | Phase 5: Machine Selection & Prediction UI | Complete |
+| UI-01 | Phase 5: Machine Selection & Prediction UI | Complete |
 | DASH-01 | Phase 6: Statistics Dashboard | Pending |
 | DASH-02 | Phase 6: Statistics Dashboard | Pending |
 | DASH-03 | Phase 6: Statistics Dashboard | Pending |

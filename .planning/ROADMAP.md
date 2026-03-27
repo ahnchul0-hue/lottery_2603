@@ -98,7 +98,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Install TanStack Query, types, API layer, hooks, and presentational components
+- [x] 05-01-PLAN.md — Install TanStack Query, types, API layer, hooks, and presentational components
 - [ ] 05-02-PLAN.md — MachineSelector + PredictionResults containers, rewrite App.tsx with full layout
 
 ### Phase 6: Statistics Dashboard
