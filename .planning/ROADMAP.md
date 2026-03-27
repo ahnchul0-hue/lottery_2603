@@ -160,11 +160,11 @@ Plans:
   1. Switching machines rapidly does not cause stale data or UI glitches
   2. Backend returns meaningful error responses (not 500s) for invalid machine numbers, malformed requests, or missing data
   3. The full user flow (select machine -> predict -> view dashboard -> save history -> compare results -> write memo) completes without errors
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 09-01: TBD
-- [ ] 09-02: TBD
+- [ ] 09-01-PLAN.md — Backend error hardening (Korean messages) + comprehensive integration test suite for all 5 endpoints
+- [ ] 09-02-PLAN.md — Frontend race condition handling: AbortController for prediction cancellation on machine switch
 
 ## Progress
 
