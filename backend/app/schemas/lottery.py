@@ -37,3 +37,14 @@ class MachineDataResponse(BaseModel):
     machine: str
     total_draws: int
     draws: list[LotteryDraw]
+
+
+class PredictRequest(BaseModel):
+    machine: Literal["1호기", "2호기", "3호기"]
+    strategy: Literal["frequency"]  # Phase 4 expands this
+
+
+class PredictResponse(BaseModel):
+    games: list[list[int]]  # 5 games, each 6 sorted unique numbers
+    strategy: str
+    machine: str
