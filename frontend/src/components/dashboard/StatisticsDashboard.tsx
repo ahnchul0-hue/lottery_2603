@@ -6,6 +6,9 @@ import { ChartCard } from './ChartCard'
 import { FrequencyBarChart } from './FrequencyBarChart'
 import { HotColdNumbers } from './HotColdNumbers'
 import { HeatmapGrid } from './HeatmapGrid'
+import { RatioDistribution } from './RatioDistribution'
+import { RangeDistribution } from './RangeDistribution'
+import { SumAcDistribution } from './SumAcDistribution'
 
 export function StatisticsDashboard({
   machine,
@@ -54,7 +57,23 @@ export function StatisticsDashboard({
         />
       </ChartCard>
 
-      {/* DASH-04, DASH-05, DASH-06 chart sections added in Plan 03 */}
+      <ChartCard title="홀짝 / 고저 비율 분포">
+        <RatioDistribution
+          oddEven={stats.oddEvenDist}
+          highLow={stats.highLowDist}
+        />
+      </ChartCard>
+
+      <ChartCard title="번호 구간별 분포">
+        <RangeDistribution data={stats.zoneDist} />
+      </ChartCard>
+
+      <ChartCard title="총합 범위 / AC값 분포">
+        <SumAcDistribution
+          sumData={stats.sumDist}
+          acData={stats.acDist}
+        />
+      </ChartCard>
     </div>
   )
 }
