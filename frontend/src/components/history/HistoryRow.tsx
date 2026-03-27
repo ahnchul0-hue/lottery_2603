@@ -10,10 +10,12 @@ import { useReflection } from '../../hooks/useReflection';
 export function HistoryRow({
   entry,
   onUpdate,
+  onRemove,
   allEntries,
 }: {
   entry: SavedPrediction;
   onUpdate: (patch: Partial<SavedPrediction>) => void;
+  onRemove: () => void;
   allEntries: SavedPrediction[];
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -63,10 +65,18 @@ export function HistoryRow({
         <td className="py-2 px-4">{entry.date}</td>
         <td className="py-2 px-4 text-center">{bestMatch !== null ? bestMatch : '-'}</td>
         <td className="py-2 px-4 text-center">{entry.aiReflection ? 'O' : '-'}</td>
+        <td className="py-2 px-4 text-center">
+          <button
+            onClick={(e) => { e.stopPropagation(); onRemove(); }}
+            className="text-destructive hover:text-destructive/80 text-xs font-bold transition-colors"
+          >
+            삭제
+          </button>
+        </td>
       </tr>
       {expanded && (
         <tr>
-          <td colSpan={5} className="p-4 border-b border-border border-l-4 border-l-accent">
+          <td colSpan={6} className="p-4 border-b border-border border-l-4 border-l-accent">
             {/* 저장된 예측 번호 표시 */}
             <div className="mb-4">
               <p className="text-sm font-bold text-text-primary mb-2">예측 번호</p>

@@ -21,5 +21,13 @@ export function useHistoryStorage() {
     });
   }, []);
 
-  return { entries, addEntry, updateEntry };
+  const removeEntry = useCallback((id: string) => {
+    setEntries(prev => {
+      const next = prev.filter(e => e.id !== id);
+      saveHistory(next);
+      return next;
+    });
+  }, []);
+
+  return { entries, addEntry, updateEntry, removeEntry };
 }

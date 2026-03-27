@@ -14,7 +14,7 @@ import type { SavedPrediction } from './types/history'
 function App() {
   const [selectedMachine, setSelectedMachine] = useState<string | null>(null)
   const { cancelPrediction, ...prediction } = usePrediction()
-  const { entries, addEntry, updateEntry } = useHistoryStorage()
+  const { entries, addEntry, updateEntry, removeEntry } = useHistoryStorage()
   const { theme, toggle } = useTheme()
 
   const handleMachineChange = (machine: string) => {
@@ -115,6 +115,7 @@ function App() {
           <HistorySection
             entries={entries}
             onUpdateEntry={updateEntry}
+            onRemoveEntry={removeEntry}
           />
         </div>
 

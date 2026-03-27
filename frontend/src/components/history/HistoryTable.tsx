@@ -4,9 +4,11 @@ import { HistoryRow } from './HistoryRow';
 export function HistoryTable({
   entries,
   onUpdateEntry,
+  onRemoveEntry,
 }: {
   entries: SavedPrediction[];
   onUpdateEntry: (id: string, patch: Partial<SavedPrediction>) => void;
+  onRemoveEntry: (id: string) => void;
 }) {
   if (entries.length === 0) {
     return (
@@ -28,6 +30,7 @@ export function HistoryTable({
           <th className="py-2 px-4 text-left">날짜</th>
           <th className="py-2 px-4 text-center">최고 적중</th>
           <th className="py-2 px-4 text-center">반성</th>
+          <th className="py-2 px-4 text-center">삭제</th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +39,7 @@ export function HistoryTable({
             key={entry.id}
             entry={entry}
             onUpdate={(patch) => onUpdateEntry(entry.id, patch)}
+            onRemove={() => onRemoveEntry(entry.id)}
             allEntries={entries}
           />
         ))}
