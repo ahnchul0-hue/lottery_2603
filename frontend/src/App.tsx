@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { MachineSelector } from './components/MachineSelector'
 import { PredictionResults } from './components/PredictionResults'
+import { StatisticsDashboard } from './components/dashboard/StatisticsDashboard'
 import { usePrediction } from './hooks/usePrediction'
 
 function App() {
@@ -42,6 +43,14 @@ function App() {
         )}
 
         {prediction.data && <PredictionResults results={prediction.data} />}
+
+        {/* Dashboard section separator (per D-03) */}
+        <div className="border-t border-border mt-8 pt-8">
+          <h2 className="text-xl font-bold text-text-primary mb-4">
+            통계 분석
+          </h2>
+          <StatisticsDashboard machine={selectedMachine} />
+        </div>
       </div>
     </div>
   )
