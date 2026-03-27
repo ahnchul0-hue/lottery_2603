@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.services.data_loader import DataLoader
+from app.services.decay_engine import DecayEngine
 
 data_store: dict = {}
 
@@ -15,7 +16,8 @@ async def lifespan(app: FastAPI):
     loader = DataLoader(settings.DATA_PATH)
     loader.load_and_validate()
     data_store["loader"] = loader
-    print(f"Loaded {loader.total_records} lottery records")
+    data_store["decay_engine"] = DecayEngine()
+    print(f"Loaded {loader.total_records} lottery records, decay engine ready (halflife={data_store['decay_engine'].halflife})")
     yield
     # Shutdown: cleanup
     data_store.clear()
