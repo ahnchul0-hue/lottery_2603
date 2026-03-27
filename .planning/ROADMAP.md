@@ -163,7 +163,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — Backend error hardening (Korean messages) + comprehensive integration test suite for all 5 endpoints
+- [x] 09-01-PLAN.md — Backend error hardening (Korean messages) + comprehensive integration test suite for all 5 endpoints
 - [ ] 09-02-PLAN.md — Frontend race condition handling: AbortController for prediction cancellation on machine switch
 
 ## Progress
