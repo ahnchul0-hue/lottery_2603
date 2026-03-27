@@ -6,6 +6,7 @@ and get_strategy() for safe access with error handling.
 
 from app.strategies.balance import BalanceStrategy
 from app.strategies.base import PredictionStrategy
+from app.strategies.composite import CompositeStrategy
 from app.strategies.frequency import FrequencyStrategy
 from app.strategies.pattern import PatternStrategy
 from app.strategies.range import RangeStrategy
@@ -15,6 +16,7 @@ STRATEGY_MAP: dict[str, PredictionStrategy] = {
     "pattern": PatternStrategy(),
     "range": RangeStrategy(),
     "balance": BalanceStrategy(),
+    "composite": CompositeStrategy(),
 }
 
 
