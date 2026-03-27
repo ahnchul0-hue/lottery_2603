@@ -117,7 +117,7 @@ Plans:
 Plans:
 - [x] 06-01-PLAN.md — Backend heatmap API + install Recharts + types + hooks + ChartCard wrapper
 - [x] 06-02-PLAN.md — FrequencyBarChart + HotColdNumbers + HeatmapGrid + StatisticsDashboard container + App.tsx integration
-- [ ] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
+- [x] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
 
 ### Phase 7: Prediction History & Review
 **Goal**: Users can save predictions, compare them against actual results, and track strategy performance over time with personal notes
