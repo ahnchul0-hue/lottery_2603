@@ -40,11 +40,14 @@ def get_machine_data(
     """
     loader = data_store.get("loader")
     if loader is None:
-        raise HTTPException(status_code=503, detail="Data not loaded")
+        raise HTTPException(status_code=503, detail="데이터가 아직 로드되지 않았습니다")
     try:
         draws = loader.get_draws_for_machine(machine)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    except ValueError:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 호기입니다: {machine}. 사용 가능: 1호기, 2호기, 3호기",
+        )
     return MachineDataResponse(
         machine=machine,
         total_draws=len(draws),
@@ -62,21 +65,27 @@ def predict_numbers(request: PredictRequest):
     """
     loader = data_store.get("loader")
     if loader is None:
-        raise HTTPException(status_code=503, detail="Data not loaded")
+        raise HTTPException(status_code=503, detail="데이터가 아직 로드되지 않았습니다")
 
     try:
         draws = loader.get_draws_for_machine(request.machine)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    except ValueError:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 호기입니다: {request.machine}. 사용 가능: 1호기, 2호기, 3호기",
+        )
 
     try:
         strategy = get_strategy(request.strategy)
-    except KeyError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    except KeyError:
+        raise HTTPException(
+            status_code=400,
+            detail=f"유효하지 않은 전략입니다: {request.strategy}. 사용 가능: frequency, pattern, range, balance, composite",
+        )
 
     decay_engine = data_store.get("decay_engine")
     if decay_engine is None:
-        raise HTTPException(status_code=503, detail="Decay engine not initialized")
+        raise HTTPException(status_code=503, detail="감쇠 엔진이 초기화되지 않았습니다")
 
     weighted_freq = decay_engine.compute_weighted_frequencies(draws)
     games = strategy.generate(draws, weighted_freq)
@@ -98,7 +107,7 @@ def get_heatmap_data():
     """
     loader = data_store.get("loader")
     if loader is None:
-        raise HTTPException(status_code=503, detail="Data not loaded")
+        raise HTTPException(status_code=503, detail="데이터가 아직 로드되지 않았습니다")
 
     rows = compute_heatmap_data(loader._by_machine)
     return HeatmapResponse(rows=rows)
@@ -121,14 +130,17 @@ def create_reflection(request: ReflectRequest):
             comparison_data=request.comparison_data,
             past_reflections=request.past_reflections,
         )
-    except ValueError as e:
+    except ValueError:
         # API key not configured -- graceful degradation per D-15
-        raise HTTPException(status_code=503, detail=str(e))
+        raise HTTPException(
+            status_code=503,
+            detail="AI 반성 기능을 사용할 수 없습니다 (API 키 미설정)",
+        )
     except Exception as e:
         # Claude API errors (auth, rate limit, network)
         raise HTTPException(
             status_code=502,
-            detail=f"AI reflection generation failed: {str(e)}",
+            detail=f"AI 반성 생성에 실패했습니다: {str(e)}",
         )
 
     return ReflectResponse(
