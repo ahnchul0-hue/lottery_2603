@@ -6,9 +6,11 @@ and get_strategy() for safe access with error handling.
 
 from app.strategies.base import PredictionStrategy
 from app.strategies.frequency import FrequencyStrategy
+from app.strategies.pattern import PatternStrategy
 
 STRATEGY_MAP: dict[str, PredictionStrategy] = {
     "frequency": FrequencyStrategy(),
+    "pattern": PatternStrategy(),
 }
 
 

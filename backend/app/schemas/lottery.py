@@ -41,7 +41,7 @@ class MachineDataResponse(BaseModel):
 
 class PredictRequest(BaseModel):
     machine: Literal["1호기", "2호기", "3호기"]
-    strategy: Literal["frequency"]  # Phase 4 expands this
+    strategy: Literal["frequency", "pattern"]  # Phase 4 expands this
 
 
 class PredictResponse(BaseModel):
