@@ -120,22 +120,22 @@ Plans:
 - [x] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
 
 ### Phase 7: Prediction History & Review
-**Goal**: Users can save predictions, compare them against actual results, and track strategy performance over time with personal notes
+**Goal**: Users can save predictions, compare them against actual results, track strategy performance, and receive AI-generated reflection memos fed back into future predictions
 **Depends on**: Phase 5
 **Requirements**: HIST-01, HIST-02, HIST-03, HIST-04, HIST-05, HIST-06, HIST-07
 **Success Criteria** (what must be TRUE):
-  1. Each prediction run is automatically saved locally with round number, machine, strategy, date, and all 25 game numbers
+  1. Each prediction run can be saved locally with round number, machine, strategy, date, and all 25 game numbers
   2. User can enter actual winning numbers and see automatic comparison (match count per game, per-strategy hit rate)
   3. A strategy performance report shows which strategy has the best historical match rate
   4. Failed prediction analysis shows which numbers were missed and which were overestimated
-  5. User can write free-text reflection/action memos that are shown as reference during the next prediction
-**Plans**: TBD
+  5. AI (Claude API) auto-generates reflection memos that are fed back into next predictions for the same machine
+**Plans**: 3 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 07-01: TBD
-- [ ] 07-02: TBD
-- [ ] 07-03: TBD
+- [ ] 07-01-PLAN.md — Types, localStorage adapter, comparison utility, hooks (useHistoryStorage, useReflection)
+- [ ] 07-02-PLAN.md — Backend: install anthropic SDK, reflection schema/service, POST /api/reflect endpoint
+- [ ] 07-03-PLAN.md — All history UI components + HistorySection container + App.tsx integration
 
 ### Phase 8: UI/UX Polish
 **Goal**: The application feels complete with theme support, loading feedback, and honest statistical framing
@@ -179,6 +179,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 | 4. Full Prediction Engine | 0/3 | Planned | - |
 | 5. Machine Selection & Prediction UI | 0/2 | Planned | - |
 | 6. Statistics Dashboard | 0/3 | Planned | - |
-| 7. Prediction History & Review | 0/3 | Not started | - |
+| 7. Prediction History & Review | 0/3 | Planned | - |
 | 8. UI/UX Polish | 0/2 | Not started | - |
 | 9. Integration & Hardening | 0/2 | Not started | - |
