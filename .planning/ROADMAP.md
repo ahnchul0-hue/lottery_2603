@@ -83,7 +83,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — PatternStrategy: pair frequency + consecutive injection + ending-digit completion (TDD)
-- [ ] 04-02-PLAN.md — RangeStrategy (zone distribution) + BalanceStrategy (odd/even + high/low) (TDD)
+- [x] 04-02-PLAN.md — RangeStrategy (zone distribution) + BalanceStrategy (odd/even + high/low) (TDD)
 - [ ] 04-03-PLAN.md — CompositeStrategy (weighted blend 40/20/20/20) + schema/registry wiring + API integration tests
 
 ### Phase 5: Machine Selection & Prediction UI
