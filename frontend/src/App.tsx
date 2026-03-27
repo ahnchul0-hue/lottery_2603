@@ -13,9 +13,14 @@ import type { SavedPrediction } from './types/history'
 
 function App() {
   const [selectedMachine, setSelectedMachine] = useState<string | null>(null)
-  const prediction = usePrediction()
+  const { cancelPrediction, ...prediction } = usePrediction()
   const { entries, addEntry, updateEntry } = useHistoryStorage()
   const { theme, toggle } = useTheme()
+
+  const handleMachineChange = (machine: string) => {
+    cancelPrediction()
+    setSelectedMachine(machine)
+  }
 
   const handlePredict = () => {
     if (selectedMachine) {
@@ -50,7 +55,7 @@ function App() {
 
         <MachineSelector
           selectedMachine={selectedMachine}
-          onSelectMachine={setSelectedMachine}
+          onSelectMachine={handleMachineChange}
         />
 
         <div className="my-6 text-center">
