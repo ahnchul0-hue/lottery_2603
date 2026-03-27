@@ -31,21 +31,20 @@
 
 ### Validated
 
-(None yet — ship to validate)
-
-### Active
-
-- [ ] 호기 선택 UI (1호기/2호기/3호기)
-- [ ] 호기별 역대 데이터 분석 엔진
-- [ ] 시간 감쇠 가중치 적용 (최신 회차 → 높은 가중치)
-- [ ] 5가지 전략별 번호 생성
+- [x] 호기 선택 UI (1호기/2호기/3호기) — Validated in Phase 5
+- [x] 호기별 역대 데이터 분석 엔진 — Validated in Phase 1-2
+- [x] 시간 감쇠 가중치 적용 (최신 회차 → 높은 가중치) — Validated in Phase 2
+- [x] 5가지 전략별 번호 생성 — Validated in Phase 3-4
   - 빈도 전략: 호기별 번호 출현 빈도 + 가중치
   - 패턴 전략: 호기별 최빈 쌍/연속번호/끝수 패턴
   - 구간 전략: 호기별 구간대(1-9, 10-19, 20-29, 30-39, 40-45) 분포
   - 홀짝밸런스 전략: 호기별 홀짝/고저 비율 경향 반영
   - 종합 전략: 위 4가지 전략 종합 가중 평균
-- [ ] 전략당 5게임 생성 (총 25게임)
-- [ ] 예측 결과 표시 UI
+- [x] 전략당 5게임 생성 (총 25게임) — Validated in Phase 4
+- [x] 예측 결과 표시 UI — Validated in Phase 5
+
+### Active
+
 - [ ] 호기별 통계 분석 대시보드
 - [ ] 방법론 리서치 후 사전 제안/확인 프로세스
 
@@ -110,4 +109,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-26 after initialization*
+*Last updated: 2026-03-27 after Phase 5 completion — machine selection & prediction UI delivered*
