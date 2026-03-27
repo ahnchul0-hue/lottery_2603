@@ -29,7 +29,7 @@ export function SavePredictionButton({
         value={roundNumber}
         onChange={e => setRoundNumber(e.target.value)}
         placeholder="예: 1216"
-        className="w-24 h-10 px-4 border border-border rounded-lg text-sm text-right"
+        className="w-24 h-10 px-4 border border-border rounded-lg text-sm text-right bg-card text-text-primary placeholder:text-text-secondary"
       />
       <button
         onClick={handleSave}

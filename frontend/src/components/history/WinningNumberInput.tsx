@@ -54,7 +54,7 @@ export function WinningNumberInput({
             value={values[i]}
             onChange={e => handleChange(i, e.target.value)}
             onKeyDown={e => handleKeyDown(i, e)}
-            className="w-12 h-12 text-center border border-border rounded-lg text-lg font-bold focus:border-accent focus:outline-none"
+            className="w-12 h-12 text-center border border-border rounded-lg text-lg font-bold focus:border-accent focus:outline-none bg-card text-text-primary placeholder:text-text-secondary"
             placeholder="1-45"
           />
         ))}
