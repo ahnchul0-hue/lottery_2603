@@ -164,7 +164,7 @@ Plans:
 
 Plans:
 - [ ] 09-01-PLAN.md — Backend error hardening (Korean messages) + comprehensive integration test suite for all 5 endpoints
-- [ ] 09-02-PLAN.md — Frontend race condition handling: AbortController for prediction cancellation on machine switch
+- [x] 09-02-PLAN.md — Frontend race condition handling: AbortController for prediction cancellation on machine switch
 
 ## Progress
 
@@ -181,4 +181,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 | 6. Statistics Dashboard | 0/3 | Planned | - |
 | 7. Prediction History & Review | 1/3 | In Progress | - |
 | 8. UI/UX Polish | 0/2 | Not started | - |
-| 9. Integration & Hardening | 0/2 | Not started | - |
+| 9. Integration & Hardening | 1/2 | In Progress | - |
