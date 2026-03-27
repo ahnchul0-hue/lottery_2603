@@ -111,13 +111,13 @@ Plans:
   3. A heatmap grid (3x45) shows per-machine frequency deviation from expected values
   4. Charts display odd/even ratio, high/low ratio, range distribution, sum range, and AC value distribution for the selected machine
   5. The dashboard section is visually distinct from the prediction area with a data-analysis aesthetic
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
-- [ ] 06-03: TBD
+- [ ] 06-01-PLAN.md — Backend heatmap API + install Recharts + types + hooks + ChartCard wrapper
+- [ ] 06-02-PLAN.md — FrequencyBarChart + HotColdNumbers + HeatmapGrid + StatisticsDashboard container + App.tsx integration
+- [ ] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
 
 ### Phase 7: Prediction History & Review
 **Goal**: Users can save predictions, compare them against actual results, and track strategy performance over time with personal notes
@@ -178,7 +178,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 | 3. Prediction Pipeline (Vertical Slice) | 0/2 | Not started | - |
 | 4. Full Prediction Engine | 0/3 | Planned | - |
 | 5. Machine Selection & Prediction UI | 0/2 | Planned | - |
-| 6. Statistics Dashboard | 0/3 | Not started | - |
+| 6. Statistics Dashboard | 0/3 | Planned | - |
 | 7. Prediction History & Review | 0/3 | Not started | - |
 | 8. UI/UX Polish | 0/2 | Not started | - |
 | 9. Integration & Hardening | 0/2 | Not started | - |
