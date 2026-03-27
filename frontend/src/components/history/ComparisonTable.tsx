@@ -14,7 +14,7 @@ export function ComparisonTable({ comparison }: { comparison: ComparisonResult }
   return (
     <div>
       <h4 className="text-base font-bold text-text-primary mb-2">비교 결과</h4>
-      <table className="w-full text-sm">
+      <table className="w-full text-sm text-text-primary">
         <thead>
           <tr className="bg-surface text-text-secondary font-bold">
             <th className="py-2 px-2 text-left">전략</th>

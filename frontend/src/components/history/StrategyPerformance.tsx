@@ -33,7 +33,7 @@ export function StrategyPerformance({ entries }: { entries: SavedPrediction[] })
   return (
     <div className="bg-card rounded-xl border border-border p-4">
       <h3 className="text-base font-bold text-text-primary mb-4">전략별 성과</h3>
-      <table className="w-full text-sm">
+      <table className="w-full text-sm text-text-primary">
         <thead>
           <tr className="bg-surface text-text-secondary font-bold">
             <th className="py-2 px-4 text-left">전략</th>

@@ -20,7 +20,7 @@ export function HistoryTable({
   }
 
   return (
-    <table className="w-full text-sm">
+    <table className="w-full text-sm text-text-primary">
       <thead>
         <tr className="bg-surface text-text-secondary font-bold">
           <th className="py-2 px-4 text-right">회차</th>
