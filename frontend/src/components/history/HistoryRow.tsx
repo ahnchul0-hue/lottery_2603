@@ -67,6 +67,27 @@ export function HistoryRow({
       {expanded && (
         <tr>
           <td colSpan={5} className="p-4 border-b border-border border-l-4 border-l-accent">
+            {/* 저장된 예측 번호 표시 */}
+            <div className="mb-4">
+              <p className="text-sm font-bold text-text-primary mb-2">예측 번호</p>
+              <div className="space-y-2">
+                {entry.predictions.map(p => (
+                  <div key={p.strategy} className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-text-secondary w-24 shrink-0">
+                      {p.strategy === 'frequency' ? '빈도' : p.strategy === 'pattern' ? '패턴' : p.strategy === 'range' ? '구간' : p.strategy === 'balance' ? '밸런스' : '종합'}
+                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {p.games.map((game, gi) => (
+                        <span key={gi} className="text-xs text-text-primary bg-surface rounded px-2 py-0.5">
+                          {game.join(', ')}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {!entry.comparison && (
               <WinningNumberInput onSubmit={handleCompare} />
             )}
