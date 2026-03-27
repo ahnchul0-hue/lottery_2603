@@ -134,8 +134,8 @@ Plans:
 
 Plans:
 - [x] 07-01-PLAN.md — Types, localStorage adapter, comparison utility, hooks (useHistoryStorage, useReflection)
-- [ ] 07-02-PLAN.md — Backend: install anthropic SDK, reflection schema/service, POST /api/reflect endpoint
-- [ ] 07-03-PLAN.md — All history UI components + HistorySection container + App.tsx integration
+- [x] 07-02-PLAN.md — Backend: install anthropic SDK, reflection schema/service, POST /api/reflect endpoint
+- [x] 07-03-PLAN.md — All history UI components + HistorySection container + App.tsx integration
 
 ### Phase 8: UI/UX Polish
 **Goal**: The application feels complete with theme support, loading feedback, and honest statistical framing
