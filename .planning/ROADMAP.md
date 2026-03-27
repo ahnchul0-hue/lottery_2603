@@ -79,12 +79,12 @@ Plans:
   3. Balance strategy generates 5 games reflecting the selected machine's odd/even and high/low ratio tendencies
   4. Composite strategy generates 5 games by combining weighted outputs from all 4 individual strategies
   5. No two games among the 25 are identical number sets
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-- [ ] 04-03: TBD
+- [ ] 04-01-PLAN.md — PatternStrategy: pair frequency + consecutive injection + ending-digit completion (TDD)
+- [ ] 04-02-PLAN.md — RangeStrategy (zone distribution) + BalanceStrategy (odd/even + high/low) (TDD)
+- [ ] 04-03-PLAN.md — CompositeStrategy (weighted blend 40/20/20/20) + schema/registry wiring + API integration tests
 
 ### Phase 5: Machine Selection & Prediction UI
 **Goal**: Users can select a machine, trigger prediction, and see all 25 games organized by strategy in a clean card layout
@@ -178,7 +178,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 | 1. Foundation & Data Layer | 3/3 | Complete | 2026-03-26 |
 | 2. Time Decay Engine | 0/1 | Planned | - |
 | 3. Prediction Pipeline (Vertical Slice) | 0/2 | Not started | - |
-| 4. Full Prediction Engine | 0/3 | Not started | - |
+| 4. Full Prediction Engine | 0/3 | Planned | - |
 | 5. Machine Selection & Prediction UI | 0/3 | Not started | - |
 | 6. Statistics Dashboard | 0/3 | Not started | - |
 | 7. Prediction History & Review | 0/3 | Not started | - |
