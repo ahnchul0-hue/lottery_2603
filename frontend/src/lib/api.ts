@@ -1,4 +1,5 @@
 import type { MachineDataResponse, PredictResponse } from '../types/lottery';
+import type { HeatmapData } from '../types/statistics';
 
 export const API_BASE = 'http://localhost:8000/api';
 
@@ -27,4 +28,12 @@ export async function fetchPrediction(
     throw new Error(`Failed to fetch prediction: HTTP ${res.status}`);
   }
   return res.json() as Promise<PredictResponse>;
+}
+
+export async function fetchHeatmapData(): Promise<HeatmapData> {
+  const res = await fetch(`${API_BASE}/statistics/heatmap`);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch heatmap data: HTTP ${res.status}`);
+  }
+  return res.json() as Promise<HeatmapData>;
 }
