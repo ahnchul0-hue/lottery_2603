@@ -21,8 +21,8 @@
 - [x] **DECAY-02**: 감쇠 파라미터(halflife)는 기본값 50으로 설정되며 코드 레벨에서 조정 가능하다
 
 ### Analysis Dashboard (분석 대시보드)
-- [ ] **DASH-01**: 호기별 번호 출현 빈도 바 차트를 표시한다 (1-45번 전체)
-- [ ] **DASH-02**: 호기별 Hot/Cold 번호 상위 10개를 표시한다
+- [x] **DASH-01**: 호기별 번호 출현 빈도 바 차트를 표시한다 (1-45번 전체)
+- [x] **DASH-02**: 호기별 Hot/Cold 번호 상위 10개를 표시한다
 - [x] **DASH-03**: 호기별 번호 편중 히트맵을 표시한다 (3x45 그리드, 기대빈도 대비 편차)
 - [ ] **DASH-04**: 호기별 홀짝/고저 비율 분포를 차트로 표시한다
 - [x] **DASH-05**: 호기별 번호 구간대 분포를 차트로 표시한다
@@ -34,7 +34,7 @@
 
 ### UI/UX
 - [x] **UI-01**: 상단 영역은 깔끔 모던 스타일 (호기 선택 + 예측 결과 카드)
-- [ ] **UI-02**: 하단 영역은 데이터 분석 대시보드 스타일 (차트, 통계)
+- [x] **UI-02**: 하단 영역은 데이터 분석 대시보드 스타일 (차트, 통계)
 - [ ] **UI-03**: 다크/라이트 모드를 지원한다
 - [ ] **UI-04**: 예측 진행 중 로딩 애니메이션을 표시한다
 - [ ] **UI-05**: 통계적 면책조항을 표시한다 ("분석 도구이며 당첨 보장 아님")
@@ -95,13 +95,13 @@
 | MACH-02 | Phase 5: Machine Selection & Prediction UI | Complete |
 | MACH-03 | Phase 5: Machine Selection & Prediction UI | Complete |
 | UI-01 | Phase 5: Machine Selection & Prediction UI | Complete |
-| DASH-01 | Phase 6: Statistics Dashboard | Pending |
-| DASH-02 | Phase 6: Statistics Dashboard | Pending |
+| DASH-01 | Phase 6: Statistics Dashboard | Complete |
+| DASH-02 | Phase 6: Statistics Dashboard | Complete |
 | DASH-03 | Phase 6: Statistics Dashboard | Complete |
 | DASH-04 | Phase 6: Statistics Dashboard | Pending |
 | DASH-05 | Phase 6: Statistics Dashboard | Complete |
 | DASH-06 | Phase 6: Statistics Dashboard | Pending |
-| UI-02 | Phase 6: Statistics Dashboard | Pending |
+| UI-02 | Phase 6: Statistics Dashboard | Complete |
 | HIST-01 | Phase 7: Prediction History & Review | Pending |
 | HIST-02 | Phase 7: Prediction History & Review | Pending |
 | HIST-03 | Phase 7: Prediction History & Review | Pending |

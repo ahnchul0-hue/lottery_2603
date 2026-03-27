@@ -116,7 +116,7 @@ Plans:
 
 Plans:
 - [x] 06-01-PLAN.md — Backend heatmap API + install Recharts + types + hooks + ChartCard wrapper
-- [ ] 06-02-PLAN.md — FrequencyBarChart + HotColdNumbers + HeatmapGrid + StatisticsDashboard container + App.tsx integration
+- [x] 06-02-PLAN.md — FrequencyBarChart + HotColdNumbers + HeatmapGrid + StatisticsDashboard container + App.tsx integration
 - [ ] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
 
 ### Phase 7: Prediction History & Review
