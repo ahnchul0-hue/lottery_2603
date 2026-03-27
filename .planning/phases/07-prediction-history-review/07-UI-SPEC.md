@@ -35,7 +35,7 @@ Declared values (multiples of 4, matching existing 8-point system):
 |-------|-------|---------------------|
 | xs | 4px | Gap between winning number input fields (gap-1), inline badge padding |
 | sm | 8px | Inner padding of table cells (py-2 px-2), gap between action buttons, accordion content inner padding |
-| md | 16px | Padding inside card containers (p-4), gap between section title and content (mb-4) |
+| md | 16px | Padding inside card containers (p-4), gap between section title and content (mb-4), horizontal table cell padding (px-4) |
 | lg | 24px | Gap between consecutive sections/cards (space-y-6), gap between history table and performance report |
 | xl | 32px | Gap between the history section header and the dashboard above (mt-8 pt-8) |
 | 2xl | 48px | Not used in this phase |
@@ -65,7 +65,7 @@ Consistent with Phase 6 UI-SPEC. All emphasis text uses `font-bold` (700).
 |------|-------|---------------------|
 | Dominant (60%) | `#f8fafc` (--color-surface) | Page background (bg-surface) |
 | Secondary (30%) | `#ffffff` (--color-card) | History section card background (bg-card), accordion expanded content background |
-| Accent (10%) | `#3b82f6` (--color-accent) | "예측 저장" button, "비교" button, active accordion row indicator, matched number highlight background |
+| Accent (10%) | `#3b82f6` (--color-accent) | "예측 저장" button, "번호 비교" button, active accordion row indicator, matched number highlight background |
 | Destructive | `#ef4444` (--color-destructive) | "이력 삭제" confirmation (if needed), validation error text on number input |
 | Text primary | `#0f172a` (--color-text-primary) | Section headers, table headers, round numbers |
 | Text secondary | `#64748b` (--color-text-secondary) | Date column, machine column, reflection memo secondary text, empty state body |
@@ -74,7 +74,7 @@ Consistent with Phase 6 UI-SPEC. All emphasis text uses `font-bold` (700).
 
 ### Accent reserved for:
 - "예측 저장" primary CTA button background
-- "비교" button background (winning number submission)
+- "번호 비교" button background (winning number submission)
 - "AI 분석" button background (AI reflection trigger)
 - Expanded accordion row left border indicator (border-l-4 border-accent)
 - NOT used for table cell backgrounds or text highlights
@@ -105,7 +105,7 @@ All UI copy is in Korean, consistent with Phase 5 D-09 decision.
 | Save success toast | 저장 완료 | Brief confirmation text, displayed inline below save button for 2 seconds |
 | Winning number section label | 실제 당첨번호 입력 | Label above the 6-field winning number input (D-05) |
 | Winning number placeholder | 1-45 | Placeholder in each of the 6 input fields |
-| Compare button | 비교 | Button to submit winning numbers for comparison (D-05) |
+| Compare button | 번호 비교 | Button to submit winning numbers for comparison (D-05) |
 | Comparison table header | 비교 결과 | Title above comparison results table (D-06) |
 | Strategy column header | 전략 | Table column: strategy name |
 | Game column header | 게임 | Table column: game index (1-5) |
@@ -204,7 +204,7 @@ Gap between cards: `space-y-6` (24px)
 |-----------|------|--------|-------|-------------|
 | `HistorySection` | Container | App.tsx | `machine: string, predictionData: PredictResponse[]` | Orchestrates all history UI. Owns useHistoryStorage hook. Renders save button, performance report, history table. |
 | `SavePredictionButton` | Presentational | App.tsx (near PredictionResults) | `predictions: PredictResponse[], machine: string, onSave: (roundNumber: number) => void` | Inline form: round number input (type="number", min=800, max=9999) + "예측 저장" button. Disabled when no predictions or no round number. |
-| `WinningNumberInput` | Presentational | HistoryRow (accordion) | `onSubmit: (numbers: number[]) => void` | 6 input fields (w-12 h-12 each) + "비교" button. Auto-advance on complete entry. Validation: 1-45 range, no duplicates, all 6 filled. |
+| `WinningNumberInput` | Presentational | HistoryRow (accordion) | `onSubmit: (numbers: number[]) => void` | 6 input fields (w-12 h-12 each) + "번호 비교" button. Auto-advance on complete entry. Validation: 1-45 range, no duplicates, all 6 filled. |
 | `ComparisonTable` | Presentational | HistoryRow (accordion) | `comparison: ComparisonResult` | HTML table: strategy > game rows showing predicted numbers, match count, matched numbers. Per-strategy summary row with hit rate. Background tint by match count. |
 | `HistoryTable` | Presentational | HistorySection | `entries: SavedPrediction[], onUpdateEntry: (id, patch) => void` | HTML table with 5 columns (D-08). Renders HistoryRow for each entry. Newest-first sort (D-10). |
 | `HistoryRow` | Presentational | HistoryTable | `entry: SavedPrediction, onUpdate: (patch) => void` | Clickable table row + accordion expansion (D-09). Expanded state shows WinningNumberInput (if no comparison yet), ComparisonTable, FailureAnalysis, AiReflection. |
@@ -250,8 +250,8 @@ Gap between cards: `space-y-6` (24px)
 | Step | Interaction | Behavior |
 |------|------------|----------|
 | 1 | User clicks history row | Accordion expands in-place (D-09). If no comparison exists, shows WinningNumberInput. |
-| 2 | User enters 6 winning numbers | Auto-advance on complete entry (D-05). Input validated: 1-45, no duplicates, numeric only. "비교" button disabled until all 6 valid unique numbers entered. |
-| 3 | User clicks "비교" | Pure client-side comparison computed. ComparisonTable and FailureAnalysis render immediately. Comparison result saved to localStorage entry. |
+| 2 | User enters 6 winning numbers | Auto-advance on complete entry (D-05). Input validated: 1-45, no duplicates, numeric only. "번호 비교" button disabled until all 6 valid unique numbers entered. |
+| 3 | User clicks "번호 비교" | Pure client-side comparison computed. ComparisonTable and FailureAnalysis render immediately. Comparison result saved to localStorage entry. |
 
 ### AI Reflection Flow
 
@@ -300,7 +300,7 @@ PredictionResults (existing)
 
 Styling:
 - Container: `flex items-center gap-3 mt-4 justify-end`
-- Round input: `w-24 h-10 px-3 border border-border rounded-lg text-sm text-right`
+- Round input: `w-24 h-10 px-4 border border-border rounded-lg text-sm text-right`
 - Save button: `px-6 py-2 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors`
 
 Source: Claude's discretion for button position and design (CONTEXT.md discretion area). Placed near prediction results for logical proximity.
@@ -325,7 +325,7 @@ Source: Claude's discretion for button position and design (CONTEXT.md discretio
 | Table width | 100% (w-full) |
 | Header row | `bg-surface text-text-secondary text-sm font-bold` |
 | Body row | `border-b border-border cursor-pointer hover:bg-surface transition-colors` |
-| Cell padding | `py-2 px-3` (8px vertical, 12px horizontal) |
+| Cell padding | `py-2 px-4` (8px vertical, 16px horizontal) |
 | Text alignment | Round: right. Machine: center. Date: left. Best match: center. Reflection: center. |
 | "Best match" value | Integer: highest match count across all 25 games for that entry. "-" if no comparison. |
 
@@ -348,7 +348,7 @@ Source: Claude's discretion for button position and design (CONTEXT.md discretio
 | Header row | `bg-surface text-text-secondary text-sm font-bold` |
 | Body row | Background tint varies by match count (see Match Highlight Color Scale above) |
 | Strategy summary row | `font-bold border-t-2 border-border` separating each strategy's 5 games |
-| Cell padding | `py-1.5 px-2` (6px vertical, 8px horizontal -- compact for 25 rows) |
+| Cell padding | `py-2 px-2` (8px vertical, 8px horizontal -- compact for 25 rows) |
 | Numbers format | Comma-separated plain text (D-07), e.g. "3, 7, 15, 22, 33, 41" |
 | Match count | Right-aligned, monospace-like: `font-mono` |
 
@@ -384,7 +384,7 @@ Source: Claude's discretion on chart inclusion. Table is sufficient for 5 strate
 
 ```
   실제 당첨번호 입력
-  [__] [__] [__] [__] [__] [__]  [비교]
+  [__] [__] [__] [__] [__] [__]  [번호 비교]
 ```
 
 | Property | Value |
@@ -399,7 +399,7 @@ Source: Claude's discretion on chart inclusion. Table is sufficient for 5 strate
 | Auto-advance | Focus next field when current has 2 digits or single digit > 4 |
 | Validation | 1-45 range, no duplicates across 6 fields, numeric only |
 | Invalid input | `border-destructive` ring on the offending field |
-| "비교" button | Same accent style as other action buttons. Disabled until all 6 valid unique numbers. |
+| "번호 비교" button | Same accent style as other action buttons. Disabled until all 6 valid unique numbers. |
 
 ---
 
