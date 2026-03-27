@@ -31,11 +31,11 @@ export function RangeDistribution({ data }: { data: ZoneDistribution[] }) {
   return (
     <ResponsiveContainer width="100%" height={250}>
       <BarChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="zone" tick={{ fontSize: 11 }} />
-        <YAxis width={40} />
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+        <XAxis dataKey="zone" tick={{ fontSize: 11, fill: 'var(--color-chart-text)' }} />
+        <YAxis width={40} tick={{ fill: 'var(--color-chart-text)' }} />
         <Tooltip content={<ZoneTooltip />} />
-        <Bar dataKey="count" fill="#3b82f6" radius={[2, 2, 0, 0]} />
+        <Bar dataKey="count" fill="var(--color-chart-blue)" radius={[2, 2, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   )

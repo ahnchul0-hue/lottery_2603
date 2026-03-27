@@ -56,17 +56,17 @@ export function SumAcDistribution({
         <p className="text-sm font-bold text-text-primary mb-2">총합 분포</p>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={sumData}>
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
             <XAxis
               dataKey="range"
-              tick={{ fontSize: 9 }}
+              tick={{ fontSize: 9, fill: 'var(--color-chart-text)' }}
               angle={-30}
               textAnchor="end"
               height={50}
             />
-            <YAxis width={30} />
+            <YAxis width={30} tick={{ fill: 'var(--color-chart-text)' }} />
             <Tooltip content={<SumTooltip />} />
-            <Bar dataKey="count" fill="#3b82f6" radius={[2, 2, 0, 0]} />
+            <Bar dataKey="count" fill="var(--color-chart-blue)" radius={[2, 2, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -74,11 +74,11 @@ export function SumAcDistribution({
         <p className="text-sm font-bold text-text-primary mb-2">AC값 분포</p>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={acData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="acValue" tick={{ fontSize: 11 }} />
-            <YAxis width={30} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+            <XAxis dataKey="acValue" tick={{ fontSize: 11, fill: 'var(--color-chart-text)' }} />
+            <YAxis width={30} tick={{ fill: 'var(--color-chart-text)' }} />
             <Tooltip content={<AcTooltip />} />
-            <Bar dataKey="count" fill="#8b5cf6" radius={[2, 2, 0, 0]} />
+            <Bar dataKey="count" fill="var(--color-chart-purple)" radius={[2, 2, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
