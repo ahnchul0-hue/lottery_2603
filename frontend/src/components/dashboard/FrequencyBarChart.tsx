@@ -21,7 +21,7 @@ function FrequencyTooltip({
   if (!active || !payload?.length) return null
   return (
     <div className="bg-card border border-border rounded px-2 py-1 text-sm text-text-primary shadow">
-      {label}번: {payload[0].value}회
+      {label}번: {payload[0].value.toFixed(1)}
     </div>
   )
 }

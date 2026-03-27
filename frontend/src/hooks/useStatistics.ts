@@ -42,21 +42,32 @@ function countRatios(
   return categories.map((ratio) => ({ ratio, count: counts[ratio] }))
 }
 
+const DECAY_HALFLIFE = 30
+
+function computeWeightedFrequencies(draws: LotteryDraw[]): Record<number, number> {
+  const n = draws.length
+  const freq: Record<number, number> = {}
+  for (let num = 1; num <= 45; num++) {
+    freq[num] = 0
+  }
+  for (let i = 0; i < n; i++) {
+    const drawsSince = n - 1 - i
+    const weight = Math.pow(0.5, drawsSince / DECAY_HALFLIFE)
+    for (const num of draws[i].numbers) {
+      freq[num] += weight
+    }
+  }
+  return freq
+}
+
 export function useStatistics(draws: LotteryDraw[]): StatisticsResult {
-  // Frequency data: count per number 1-45
+  // Frequency data: time-decay weighted frequency per number 1-45
+  // Uses same exponential decay as backend DecayEngine (halflife=30)
   const frequencyData = useMemo<NumberFrequency[]>(() => {
-    const freq: Record<number, number> = {}
-    for (let n = 1; n <= 45; n++) {
-      freq[n] = 0
-    }
-    for (const draw of draws) {
-      for (const num of draw.numbers) {
-        freq[num]++
-      }
-    }
+    const freq = computeWeightedFrequencies(draws)
     return Array.from({ length: 45 }, (_, i) => ({
       number: i + 1,
-      count: freq[i + 1],
+      count: Math.round(freq[i + 1] * 100) / 100,
     }))
   }, [draws])
 
