@@ -115,7 +115,7 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 06-01-PLAN.md — Backend heatmap API + install Recharts + types + hooks + ChartCard wrapper
+- [x] 06-01-PLAN.md — Backend heatmap API + install Recharts + types + hooks + ChartCard wrapper
 - [ ] 06-02-PLAN.md — FrequencyBarChart + HotColdNumbers + HeatmapGrid + StatisticsDashboard container + App.tsx integration
 - [ ] 06-03-PLAN.md — RatioDistribution + RangeDistribution + SumAcDistribution + complete dashboard
 

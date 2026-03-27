@@ -23,9 +23,9 @@
 ### Analysis Dashboard (분석 대시보드)
 - [ ] **DASH-01**: 호기별 번호 출현 빈도 바 차트를 표시한다 (1-45번 전체)
 - [ ] **DASH-02**: 호기별 Hot/Cold 번호 상위 10개를 표시한다
-- [ ] **DASH-03**: 호기별 번호 편중 히트맵을 표시한다 (3x45 그리드, 기대빈도 대비 편차)
+- [x] **DASH-03**: 호기별 번호 편중 히트맵을 표시한다 (3x45 그리드, 기대빈도 대비 편차)
 - [ ] **DASH-04**: 호기별 홀짝/고저 비율 분포를 차트로 표시한다
-- [ ] **DASH-05**: 호기별 번호 구간대 분포를 차트로 표시한다
+- [x] **DASH-05**: 호기별 번호 구간대 분포를 차트로 표시한다
 - [ ] **DASH-06**: 호기별 총합 범위 및 AC값 분포를 표시한다
 
 ### Data Layer (데이터)
@@ -97,9 +97,9 @@
 | UI-01 | Phase 5: Machine Selection & Prediction UI | Complete |
 | DASH-01 | Phase 6: Statistics Dashboard | Pending |
 | DASH-02 | Phase 6: Statistics Dashboard | Pending |
-| DASH-03 | Phase 6: Statistics Dashboard | Pending |
+| DASH-03 | Phase 6: Statistics Dashboard | Complete |
 | DASH-04 | Phase 6: Statistics Dashboard | Pending |
-| DASH-05 | Phase 6: Statistics Dashboard | Pending |
+| DASH-05 | Phase 6: Statistics Dashboard | Complete |
 | DASH-06 | Phase 6: Statistics Dashboard | Pending |
 | UI-02 | Phase 6: Statistics Dashboard | Pending |
 | HIST-01 | Phase 7: Prediction History & Review | Pending |
