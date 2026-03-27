@@ -63,11 +63,11 @@ Plans:
   2. Each game set contains exactly 6 numbers in the 1-45 range, with no duplicates, in ascending order
   3. The frequency strategy applies time-decay weighted frequency counts to select numbers biased toward historically frequent numbers for the chosen machine
   4. The Strategy Pattern ABC is established so new strategies can be added by implementing a single interface
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — TDD: Strategy Pattern ABC, FrequencyStrategy with weighted selection and diversity enforcement, Pydantic schemas
+- [ ] 03-02-PLAN.md — Wire POST /api/predict endpoint, add DecayEngine to lifespan, integration tests
 
 ### Phase 4: Full Prediction Engine
 **Goal**: All 5 strategies produce 25 total games with guaranteed diversity across the full set
