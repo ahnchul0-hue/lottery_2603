@@ -40,12 +40,12 @@
 - [ ] **UI-05**: 통계적 면책조항을 표시한다 ("분석 도구이며 당첨 보장 아님")
 
 ### Prediction History & Review (예측 기록 및 검증)
-- [x] **HIST-01**: 매 예측 시 생성된 25게임 번호를 회차/호기/전략/날짜와 함께 로컬 저장한다
-- [x] **HIST-02**: 실제 당첨번호를 입력하면 예측 번호와 자동 비교 분석한다 (일치 개수, 전략별 적중률)
+- [ ] **HIST-01**: 매 예측 시 생성된 25게임 번호를 회차/호기/전략/날짜와 함께 로컬 저장한다
+- [ ] **HIST-02**: 실제 당첨번호를 입력하면 예측 번호와 자동 비교 분석한다 (일치 개수, 전략별 적중률)
 - [ ] **HIST-03**: 전략별 성과 리포트를 생성한다 (어떤 전략이 가장 잘 맞았는지)
-- [x] **HIST-04**: 예측 실패 분석 — 빠뜨린 번호 패턴, 과대평가한 번호를 기록한다
+- [ ] **HIST-04**: 예측 실패 분석 — 빠뜨린 번호 패턴, 과대평가한 번호를 기록한다
 - [x] **HIST-05**: 반성/대책 메모를 기록할 수 있다 (자유 텍스트)
-- [ ] **HIST-06**: 과거 반성/대책 내용을 다음 예측 시 참고 자료로 표시한다
+- [x] **HIST-06**: 과거 반성/대책 내용을 다음 예측 시 참고 자료로 표시한다
 - [ ] **HIST-07**: 예측 이력 목록을 볼 수 있다 (회차별 예측 → 결과 → 반성 타임라인)
 
 ### Infrastructure (인프라)
@@ -102,12 +102,12 @@
 | DASH-05 | Phase 6: Statistics Dashboard | Complete |
 | DASH-06 | Phase 6: Statistics Dashboard | Complete |
 | UI-02 | Phase 6: Statistics Dashboard | Complete |
-| HIST-01 | Phase 7: Prediction History & Review | Complete |
-| HIST-02 | Phase 7: Prediction History & Review | Complete |
+| HIST-01 | Phase 7: Prediction History & Review | Pending |
+| HIST-02 | Phase 7: Prediction History & Review | Pending |
 | HIST-03 | Phase 7: Prediction History & Review | Pending |
-| HIST-04 | Phase 7: Prediction History & Review | Complete |
+| HIST-04 | Phase 7: Prediction History & Review | Pending |
 | HIST-05 | Phase 7: Prediction History & Review | Complete |
-| HIST-06 | Phase 7: Prediction History & Review | Pending |
+| HIST-06 | Phase 7: Prediction History & Review | Complete |
 | HIST-07 | Phase 7: Prediction History & Review | Pending |
 | UI-03 | Phase 8: UI/UX Polish | Pending |
 | UI-04 | Phase 8: UI/UX Polish | Pending |
