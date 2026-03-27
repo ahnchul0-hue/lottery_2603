@@ -145,12 +145,12 @@ Plans:
   1. User can toggle between dark mode and light mode, and the preference persists across page reloads
   2. A loading animation is visible during prediction computation, and the UI does not freeze or appear broken
   3. A clear disclaimer is always visible stating this is an analysis tool, not a guarantee of winning
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 08-01: TBD
-- [ ] 08-02: TBD
+- [ ] 08-01-PLAN.md — Dark/light theme infrastructure: dual token sets, useTheme hook, ThemeToggle component, chart color adaptation
+- [ ] 08-02-PLAN.md — Loading spinner on predict button and results area, statistical disclaimer component
 
 ### Phase 9: Integration & Hardening
 **Goal**: The complete application handles edge cases gracefully and all features work together without regressions
