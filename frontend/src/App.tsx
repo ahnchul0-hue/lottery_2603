@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MachineSelector } from './components/MachineSelector'
 import { PredictionResults } from './components/PredictionResults'
 import { ThemeToggle } from './components/ThemeToggle'
+import { Disclaimer } from './components/Disclaimer'
 import { StatisticsDashboard } from './components/dashboard/StatisticsDashboard'
 import { SavePredictionButton } from './components/history/SavePredictionButton'
 import { HistorySection } from './components/history/HistorySection'
@@ -56,8 +57,14 @@ function App() {
           <button
             onClick={handlePredict}
             disabled={!selectedMachine || prediction.isPending}
-            className="px-8 py-3 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="px-8 py-3 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors inline-flex items-center gap-2"
           >
+            {prediction.isPending && (
+              <svg className="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+            )}
             {prediction.isPending ? '예측 중...' : '번호 예측'}
           </button>
         </div>
@@ -66,6 +73,16 @@ function App() {
           <p className="text-destructive text-center mb-4">
             예측 실패: 백엔드 서버를 확인하세요.
           </p>
+        )}
+
+        {prediction.isPending && (
+          <div className="text-center py-12">
+            <svg className="animate-spin w-8 h-8 mx-auto text-accent mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+            <p className="text-text-secondary font-bold">5가지 전략으로 예측 번호를 생성하고 있습니다...</p>
+          </div>
         )}
 
         {prediction.data && <PredictionResults results={prediction.data} />}
@@ -95,6 +112,8 @@ function App() {
             onUpdateEntry={updateEntry}
           />
         </div>
+
+        <Disclaimer />
       </div>
     </div>
   )
