@@ -95,13 +95,11 @@ Plans:
   2. Upon selecting a machine, the total draw count and most recent draw round for that machine are displayed
   3. User clicks "번호 예측" and receives 25 games grouped into 5 strategy sections with 5 games each
   4. The upper area of the page has a clean, modern card-based layout showing machine selector and prediction results
-**Plans**: TBD
-**UI hint**: yes
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 05-01-PLAN.md — Install TanStack Query, types, API layer, hooks, and presentational components
+- [ ] 05-02-PLAN.md — MachineSelector + PredictionResults containers, rewrite App.tsx with full layout
 
 ### Phase 6: Statistics Dashboard
 **Goal**: Users can view machine-specific statistical analysis through interactive charts and visualizations below the prediction area
@@ -179,7 +177,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9
 | 2. Time Decay Engine | 0/1 | Planned | - |
 | 3. Prediction Pipeline (Vertical Slice) | 0/2 | Not started | - |
 | 4. Full Prediction Engine | 0/3 | Planned | - |
-| 5. Machine Selection & Prediction UI | 0/3 | Not started | - |
+| 5. Machine Selection & Prediction UI | 0/2 | Planned | - |
 | 6. Statistics Dashboard | 0/3 | Not started | - |
 | 7. Prediction History & Review | 0/3 | Not started | - |
 | 8. UI/UX Polish | 0/2 | Not started | - |
