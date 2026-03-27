@@ -66,7 +66,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — TDD: Strategy Pattern ABC, FrequencyStrategy with weighted selection and diversity enforcement, Pydantic schemas
+- [x] 03-01-PLAN.md — TDD: Strategy Pattern ABC, FrequencyStrategy with weighted selection and diversity enforcement, Pydantic schemas
 - [ ] 03-02-PLAN.md — Wire POST /api/predict endpoint, add DecayEngine to lifespan, integration tests
 
 ### Phase 4: Full Prediction Engine
